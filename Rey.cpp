@@ -1,6 +1,6 @@
 #include "Rey.h"
 
-Rey::Rey(int fil,int col,Pieza*** tab,bool jug) : Pieza(fil,col,tab,jug)
+Rey::Rey(int fil,int col,Pieza***& tab,bool jug) : Pieza(fil,col,tab,jug)
 {
 	if(jug){
 		this->caracter = 'P';

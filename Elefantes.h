@@ -6,7 +6,7 @@
 class Elefantes : public Pieza
 {
 	public:
-		Elefantes(int fil,int col,Pieza*** tab,bool jug);
+		Elefantes(int fil,int col,Pieza***& tab,bool jug);
 		~Elefantes();
 		bool valid(int , int);
 	protected:

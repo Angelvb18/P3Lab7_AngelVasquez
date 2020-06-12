@@ -1,6 +1,6 @@
 #include "Torre.h"
 
-Torre::Torre(int fil,int col,Pieza*** tab,bool jug):Pieza(fil,col,tab,jug)
+Torre::Torre(int fil,int col,Pieza***& tab,bool jug):Pieza(fil,col,tab,jug)
 {
 	if(jug){
 		this->caracter = 'Y';

@@ -1,6 +1,6 @@
 #include "Elefantes.h"
 
-Elefantes::Elefantes(int fil,int col,Pieza*** tab,bool jug):Pieza(fil,col,tab,jug)
+Elefantes::Elefantes(int fil,int col,Pieza***& tab,bool jug):Pieza(fil,col,tab,jug)
 {
 	if(jug){
 		this->caracter = '3';

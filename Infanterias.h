@@ -5,7 +5,7 @@
 class Infanterias : public Pieza
 {
 	public:
-		Infanterias(int fil,int col,Pieza*** tab,bool jug);
+		Infanterias(int fil,int col,Pieza***& tab,bool jug);
 		~Infanterias();
 		bool valid(int , int);
 	protected:

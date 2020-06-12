@@ -7,7 +7,6 @@ Pieza::Pieza(int fil,int col,Pieza*** tab,bool jug){
 }
 bool Pieza::movimiento(int fil,int col){
 	if(valid(fil,col)){
-		
 		if(Pieza* p = tablero[fil][col]){
 			delete p;
 			tablero[fil][col] = NULL;

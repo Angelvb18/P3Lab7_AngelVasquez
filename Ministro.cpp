@@ -1,6 +1,6 @@
 #include "Ministro.h"
 
-Ministro::Ministro(int fil,int col,Pieza*** tab,bool jug) : Pieza(fil,col,tab,jug)
+Ministro::Ministro(int fil,int col,Pieza***& tab,bool jug) : Pieza(fil,col,tab,jug)
 {
 	if(jug){
 		this->caracter = 'W';

@@ -1,6 +1,6 @@
 #include "Caballo.h"
 
-Caballo::Caballo(int fil,int col,Pieza*** tab,bool jug):Pieza(fil,col,tab,jug)
+Caballo::Caballo(int fil,int col,Pieza***& tab,bool jug):Pieza(fil,col,tab,jug)
 {
 	if(jug){
 		this->caracter = 'O';
