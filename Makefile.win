@@ -1,0 +1,55 @@
+# Project: Proyecto 1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Chaturanga.o main.o Pieza.o Tablero.o Infanterias.o Torre.o Caballo.o Elefantes.o Rey.o Ministro.o
+LINKOBJ  = Chaturanga.o main.o Pieza.o Tablero.o Infanterias.o Torre.o Caballo.o Elefantes.o Rey.o Ministro.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "Proyecto 1.exe"
+CXXFLAGS = $(CXXINCS) -std=c++11
+CFLAGS   = $(INCS) -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Chaturanga.o: Chaturanga.cpp
+	$(CPP) -c Chaturanga.cpp -o Chaturanga.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Pieza.o: Pieza.cpp
+	$(CPP) -c Pieza.cpp -o Pieza.o $(CXXFLAGS)
+
+Tablero.o: Tablero.cpp
+	$(CPP) -c Tablero.cpp -o Tablero.o $(CXXFLAGS)
+
+Infanterias.o: Infanterias.cpp
+	$(CPP) -c Infanterias.cpp -o Infanterias.o $(CXXFLAGS)
+
+Torre.o: Torre.cpp
+	$(CPP) -c Torre.cpp -o Torre.o $(CXXFLAGS)
+
+Caballo.o: Caballo.cpp
+	$(CPP) -c Caballo.cpp -o Caballo.o $(CXXFLAGS)
+
+Elefantes.o: Elefantes.cpp
+	$(CPP) -c Elefantes.cpp -o Elefantes.o $(CXXFLAGS)
+
+Rey.o: Rey.cpp
+	$(CPP) -c Rey.cpp -o Rey.o $(CXXFLAGS)
+
+Ministro.o: Ministro.cpp
+	$(CPP) -c Ministro.cpp -o Ministro.o $(CXXFLAGS)
