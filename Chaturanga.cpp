@@ -46,7 +46,6 @@ void Chaturanga::jugar(){
 				cout << ":";
 				cin >> cord;
 				valid = cordenadas(i,j,k,h,cord);
-				cout << i << " " << j << " "<< k << " "<< h<< endl; 
 				if(valid){
 					if(tablero[i][j]->movimiento(k,h)){
 				   		cout << "Movimiento valido" << endl;		   

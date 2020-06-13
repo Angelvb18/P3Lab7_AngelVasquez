@@ -5,8 +5,7 @@ using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main() {
-	int a = '9'-48;
-	cout << a << endl;
+
 	
 	char resp = '2';
 	Chaturanga* juego = new Chaturanga();
