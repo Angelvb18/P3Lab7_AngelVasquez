@@ -1,6 +1,5 @@
 #include "Chaturanga.h"
-#include <iostream>
-using namespace std;
+
 
 Chaturanga::Chaturanga()
 {
@@ -18,9 +17,27 @@ void Chaturanga::jugar(){
 	while(sigue == false){
 		printTablero();
 		if(cont %2 != 0){
-			cout << "Jugador 1 Ingrese la cordenada(Piezas Blancas)" << endl;
-			cout << ":";
-			cin >> cord;
+			int i , j,h,k;
+			bool valid = false;
+			do{
+				
+				cout << "Jugador 1 Ingrese la cordenada(Piezas Blancas)" << endl;
+				cout << ":";
+				cin >> cord;
+				valid = cordenadas(i,j,h,k,cord);
+				cout << i << " " << j << " "<< h << " "<< k<< endl; 
+				if(valid){
+					if(tablero[i][j]->movimiento(h,k)){
+				   		cout << "Movimiento valido nlnklnklnklnk1" << endl;		   
+					}else{
+						cout << "Movimineto no valido" << endl;
+					}
+				}
+				
+				
+			}while( valid== false); 
+			
+			
 		}else{
 			cout << "Jugador 2 Ingrese la cordenada(Piezas Negras)" << endl;
 			cout << ":";
@@ -89,5 +106,24 @@ void Chaturanga::cTab(){
 	tablero[0][4] = new Ministro(0,4,tablero,false);
 	tablero[7][3] = new Ministro(7,3,tablero,true);
 	
+}
+bool Chaturanga::cordenadas(int& i , int& j ,int&k,int&h,string card){
+	if(card.size() == 5){
+		if(card[0] -64 >= 1 && card[0] -64 <=8 && card[3] -64 >= 1 && card[3] -64 <=8){
+			if(card[1] -48 >= 1 && card[1] -48 <=8 && card[4] -48 >= 1 && card[4] -48 <=8){
+				i =card[0] -64;
+				j = card[1] -48;
+				k=card[3]-64;
+				h=card[4]-48;
+				return true;
+			}else{
+				return false;
+			}
+		}else{
+			return false;
+		}
+	}else{
+		return false;
+	}
 }
 
