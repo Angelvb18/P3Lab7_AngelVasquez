@@ -20,15 +20,14 @@ void Chaturanga::jugar(){
 			int i , j,h,k;
 			bool valid = false;
 			do{
-				
 				cout << "Jugador 1 Ingrese la cordenada(Piezas Blancas)" << endl;
 				cout << ":";
 				cin >> cord;
-				valid = cordenadas(i,j,h,k,cord);
-				cout << i << " " << j << " "<< h << " "<< k<< endl; 
+				valid = cordenadas(i,j,k,h,cord);
+				cout << i << " " << j << " "<< k << " "<< h<< endl; 
 				if(valid){
-					if(tablero[i][j]->movimiento(h,k)){
-				   		cout << "Movimiento valido nlnklnklnklnk1" << endl;		   
+					if(tablero[i][j]->movimiento(k,h)){
+				   		cout << "Movimiento valido" << endl;		   
 					}else{
 						cout << "Movimineto no valido" << endl;
 					}
@@ -39,10 +38,25 @@ void Chaturanga::jugar(){
 			
 			
 		}else{
-			cout << "Jugador 2 Ingrese la cordenada(Piezas Negras)" << endl;
-			cout << ":";
-			cin >> cord;
-			
+
+			int i , j,h,k;
+			bool valid = false;
+			do{
+				cout << "Jugador 2 Ingrese la cordenada(Piezas Negras)" << endl;
+				cout << ":";
+				cin >> cord;
+				valid = cordenadas(i,j,k,h,cord);
+				cout << i << " " << j << " "<< k << " "<< h<< endl; 
+				if(valid){
+					if(tablero[i][j]->movimiento(k,h)){
+				   		cout << "Movimiento valido" << endl;		   
+					}else{
+						cout << "Movimineto no valido" << endl;
+					}
+				}
+				
+				
+			}while( valid== false);
 		}
 		if(cord == "salir"){
 			sigue = true;
@@ -108,6 +122,7 @@ void Chaturanga::cTab(){
 	
 }
 bool Chaturanga::cordenadas(int& i , int& j ,int&k,int&h,string card){
+	
 	if(card.size() == 5){
 		if(card[0] -64 >= 1 && card[0] -64 <=8 && card[3] -64 >= 1 && card[3] -64 <=8){
 			if(card[1] -48 >= 1 && card[1] -48 <=8 && card[4] -48 >= 1 && card[4] -48 <=8){

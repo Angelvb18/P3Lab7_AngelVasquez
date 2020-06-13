@@ -1,4 +1,6 @@
 #include "Infanterias.h"
+#include <iostream>
+using namespace std;
 Infanterias::Infanterias(int fil,int col,Pieza***& tab,bool jug):Pieza(fil,col,tab,jug)
 {
 	if(jug){
@@ -13,10 +15,14 @@ Infanterias::~Infanterias()
 }
 bool Infanterias::valid(int fil ,int col){
 	if(jugador){
+	
 		if(tablero[fil][col] == NULL){
+			
 			if(fila+1 == fil && col == columna  ){
+			 	
 				return true;
 			}else{
+				
 			    return false;
 			}
 		}else{
@@ -28,6 +34,7 @@ bool Infanterias::valid(int fil ,int col){
 				}
 				
 			}else{
+				
 				return false;
 			}
 		}

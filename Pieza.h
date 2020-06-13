@@ -9,14 +9,16 @@ class Pieza
 		bool movimiento(int fil,int col);
 		char getChar();
 		bool getJugador();
-	protected:
+		virtual bool valid(int fil ,int col) = 0;
 		Pieza*** tablero;
+	protected:
+		
 		int fila;
 		int columna;
 		char caracter;
 		bool jugador;
 		bool validarDentro(int fil,int col);
-		virtual bool valid(int fil ,int col) = 0;
+		
 		
 };
 
